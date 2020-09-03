@@ -1,0 +1,71 @@
+server:
+  port: 8998
+  forward-headers-strategy: FRAMEWORK
+
+logging:
+  level:
+    root: DEBUG
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.web.HttpLogging: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: DEBUG
+    sun.rmi: INFO
+    org.springframework.boot.autoconfigure: INFO
+    org.springframework.beans: INFO
+    org.springframework.http.server: TRACE
+  
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          dev-cas: ## apereo cas 6.3.x OAuth2 login provider
+            authorization-uri: https://cas.example.com/cas/oauth2.0/authorize
+            token-uri: https://cas.example.com/cas/oauth2.0/accessToken
+            user-info-uri: https://cas.example.com/cas/oauth2.0/profile
+            user-name-attribute: id
+            user-info-authentication-method: form
+          heytea-gitlab: ## self hosted gitlab OAuth2 login provider
+            authorization-uri: https://gitlab.example.com/oauth/authorize
+            token-uri: https://gitlab.example.com/oauth/token
+            user-info-uri: https://gitlab.example.com/api/v4/user
+            jwk-set-uri: https://gitlab.example.com/oauth/discovery/keys
+            user-name-attribute: username
+          heytea-oauth2server: ## Spring Security OAuth login provider
+            authorization-uri: http://localhost:8081/oauth/authorize
+            token-uri: http://localhost:8081/oauth/token
+            user-info-uri: http://localhost:8081/oauth/userinfo
+            user-name-attribute: name
+        registration:
+          github:
+            client-id: 5c3d...501e
+            client-secret: 6760...c541
+          gateway:
+            provider: dev-cas
+            client-name: gateway cas
+            client-id: exampleOauthClient
+            client-secret: exampleOauthClientSecret
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            # scope: user, read
+          gateway-gitlab: ## create a gitlab applications with api, profile scopes enabled
+            provider: heytea-gitlab
+            client-name: gateway gitlab
+            client-id: cf39a0...6b547aa
+            client-secret: 29d554...ab6c70a
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            scope:
+            - profile
+            - api
+          gateway-oauth2server:
+            provider: heytea-oauth2server
+            client-name: gateway uua
+            client-id: exampleOauthClient
+            client-secret: exampleOauthClientSecret
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            scope: read
+            
