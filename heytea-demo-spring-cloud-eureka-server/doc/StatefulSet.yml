@@ -15,9 +15,9 @@ spec:
     spec:
       containers:
       - name: base-register
-        image: base-register
+        image: base-register ## 可以选择使用 huahouye/base-register
         env:
-        - name: 8081
+        - name: MANAGEMENT_SERVER_PORT
           value: "8081"
         - name: JAVA_OPTS
           value: -Duser.timezone=Asia/Shanghai -Xms256m -Xmx512m
@@ -29,8 +29,8 @@ spec:
             path: /actuator/health
             port: 8081
             scheme: HTTP
-          initialDelaySeconds: 120
-          periodSeconds: 20
+          initialDelaySeconds: 30
+          periodSeconds: 10
           timeoutSeconds: 5
           successThreshold: 1
         readinessProbe:
@@ -39,8 +39,8 @@ spec:
             path: /actuator/health
             port: 8081
             scheme: HTTP
-          initialDelaySeconds: 120
-          periodSeconds: 20
+          initialDelaySeconds: 30
+          periodSeconds: 10
           timeoutSeconds: 5
           successThreshold: 1
         resources:

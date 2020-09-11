@@ -66,6 +66,6 @@ mv target/heytea-demo-spring-cloud-eureka-server-0.0.1-SNAPSHOT.jar doc/
 docker build -t base-register doc/
 
 k8s 启动 STS
-kubectl apply -f doc/StatefulSet.yml
+kubectl apply -f doc/StatefulSet.yml -n develop
 
 ``
