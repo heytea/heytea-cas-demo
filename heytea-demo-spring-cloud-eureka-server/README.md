@@ -69,3 +69,85 @@ k8s 启动 STS
 kubectl apply -f doc/StatefulSet.yml -n develop
 
 ```
+
+## 3、极简部署
+
+如果只是为了测试一下，执行下面的命令即可完成 k8s 部署。
+
+```
+cat > StatefulSet.yml << EOF
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: base-register
+spec:
+  serviceName: "base-register"
+  selector:
+    matchLabels:
+      app: base-register
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: base-register
+    spec:
+      containers:
+      - name: base-register
+        image: huahouye/base-register
+        env:
+        - name: MANAGEMENT_SERVER_PORT
+          value: "8081"
+        - name: JAVA_OPTS
+          value: -Duser.timezone=Asia/Shanghai -Xms256m -Xmx512m
+        ports:
+        - containerPort: 30001
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /actuator/health
+            port: 8081
+            scheme: HTTP
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+          successThreshold: 1
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /actuator/health
+            port: 8081
+            scheme: HTTP
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+          successThreshold: 1
+        resources:
+          requests:
+            cpu: "0.5"
+            memory: 512Mi
+          limits:
+            cpu: "1"
+            memory: 800Mi
+#      imagePullSecrets:
+#      - name: registrypullsecret
+      
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: base-register
+spec:
+  type: NodePort
+  ports:
+  - port: 30001
+    targetPort: 30001
+    nodePort: 30001
+  selector:
+    app: base-register
+EOF
+
+kubectl apply -f StatefulSet.yml -n develop
+
+```
+
+
