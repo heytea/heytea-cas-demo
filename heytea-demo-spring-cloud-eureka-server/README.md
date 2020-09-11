@@ -68,4 +68,4 @@ docker build -t base-register doc/
 k8s 启动 STS
 kubectl apply -f doc/StatefulSet.yml -n develop
 
-``
+```
