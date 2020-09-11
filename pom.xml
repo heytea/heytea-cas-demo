@@ -26,5 +26,6 @@
         <module>
             heytea-demo-spring-cloud-gateway-oauth2login
         </module>
+        <module>heytea-demo-spring-cloud-eureka-server</module>
     </modules>
 </project>

@@ -1,0 +1,26 @@
+server:
+  port: 30001
+
+spring:
+  application:
+    name: base-register
+  profiles:
+    active: develop
+    
+eureka:
+  instance:
+    hostname: ${spring.application.name}
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 90
+    prefer-ip-address: false
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://${spring.application.name}-0.${spring.application.name}.${spring.k8s.namespace:default}.svc.cluster.local:30001/eureka/,
+        http://${spring.application.name}-1.${spring.application.name}.${spring.k8s.namespace:default}.svc.cluster.local:30001/eureka/,
+        http://${spring.application.name}-2.${spring.application.name}.${spring.k8s.namespace:default}.svc.cluster.local:30001/eureka/
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 60000
+      

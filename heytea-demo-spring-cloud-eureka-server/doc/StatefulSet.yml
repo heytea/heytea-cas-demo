@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: base-register
+spec:
+  serviceName: "base-register"
+  selector:
+    matchLabels:
+      app: base-register
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: base-register
+    spec:
+      containers:
+      - name: base-register
+        image: base-register
+        env:
+        - name: 8081
+          value: "8081"
+        - name: JAVA_OPTS
+          value: -Duser.timezone=Asia/Shanghai -Xms256m -Xmx512m
+        ports:
+        - containerPort: 30001
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /actuator/health
+            port: 8081
+            scheme: HTTP
+          initialDelaySeconds: 120
+          periodSeconds: 20
+          timeoutSeconds: 5
+          successThreshold: 1
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /actuator/health
+            port: 8081
+            scheme: HTTP
+          initialDelaySeconds: 120
+          periodSeconds: 20
+          timeoutSeconds: 5
+          successThreshold: 1
+        resources:
+          requests:
+            cpu: "0.5"
+            memory: 512Mi
+          limits:
+            cpu: "1"
+            memory: 800Mi
+#      imagePullSecrets:
+#      - name: registrypullsecret
+      
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: base-register
+spec:
+  type: NodePort
+  ports:
+  - port: 30001
+    targetPort: 30001
+    nodePort: 30001
+  selector:
+    app: base-register
