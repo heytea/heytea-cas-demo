@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: heytea-demo-spring-cloud-eureka-consumer
+  profiles:
+    active: develop
+    
+server:
+  port: 31231
+  servlet:
+    context-path: /api/${spring.application.name}
+  
+swagger:
+  title: ${spring.application.name}
+  version: 1.0
+  contact:
+    name: huahouye
+    email: huahouye [at] heytea.com
+  base-path: /**
+  exclude-path: /actuator/**, /error
+  authorization:
+    key-name: Authorization
+    name: Bearer Token
+    
+eureka:
+  instance:
+    hostname: ${spring.application.name}
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 90
+  client:
+    serviceUrl:
+      defaultZone: http://base-register:30001/eureka/
