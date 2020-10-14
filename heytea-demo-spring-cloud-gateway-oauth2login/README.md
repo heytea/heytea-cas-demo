@@ -3,11 +3,11 @@ This demo declares how `spring cloud gateway` 2.2.x uses OAuth2 flow to login OA
 
 `application.yml` configuration looks like below. 
 
-* 1. `dev-cas` provider is a apereo cas 6.3.x server builds on [cas-overlay-template](https://github.com/apereo/cas-overlay-template) .
+* 1. The `dev-cas` provider is a apereo cas 6.3.x server builds on [cas-overlay-template](https://github.com/apereo/cas-overlay-template) .
 
-* 2. also it can integrate gitlab.com or self hosted gitlab to login.
+* 2. it also can integrate gitlab.com or self hosted gitlab to login.
 
-* 3. [Spring Security OAuth](https://github.com/spring-projects/spring-security-oauth) can be a OAuth2 provider too, although the Spring Security OAuth project is deprecated, so is not recommend to use in production enviroment.
+* 3. [Spring Security OAuth](https://github.com/spring-projects/spring-security-oauth) can be a OAuth2 provider too, although the Spring Security OAuth project is deprecated, so it is not recommended to be use in production environment.
 
 ```
 spring:
@@ -61,9 +61,9 @@ spring:
             scope: read
 ```
 
-Run project as spring boot application, open http://localhost:8998 in browser, choose a login provider, and it will redirect you to OAuth2 provider login page.
+Run project as spring boot application `mvn spring-boot:run`, open http://localhost:8998 in browser, choose a login provider, and it will redirect you to OAuth2 provider login page.
 
-After login OAuth2 provider with correct username and password, it will redirect you back to `greeting.html` or `index.html` page which will show current use information details.
+After login OAuth2 provider with correct username and password, it will redirect you back to `greeting.html` or `index.html` page which will show current user's information details.
 
 #### reference
 
