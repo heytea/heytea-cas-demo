@@ -41,6 +41,7 @@
 		<module>heytea-demo-spring-cloud-eureka-consumer</module>
 		<module>heytea-demo-spring-security-cas-client1</module>
 		<module>heytea-demo-spring-security-cas-client2</module>
+		<module>heytea-demo-rabbitmq-consumer</module>
 	</modules>
 
 	<dependencyManagement>

@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: heytea-demo-rabbitmq-consumer
+  rabbitmq:
+    addresses: rabbitmq:30007
+    username: dev-sso
+    password: dev-sso-password
+    virtual-host: dev-sso-vhost
