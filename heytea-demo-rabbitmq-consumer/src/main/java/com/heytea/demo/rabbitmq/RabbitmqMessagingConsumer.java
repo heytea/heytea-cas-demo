@@ -12,11 +12,16 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Component
 public class RabbitmqMessagingConsumer {
+    
+    private static final String queueName = "heytea.sso.oa.queue";
 
-    @RabbitListener()
+    @RabbitListener(queues = {queueName})
     public void userQueueMessage(@Payload HeyteaMQBody<MessageVo> msg) {
         
         log.info("Recieved MessageVo Message: {}", msg);
+        
+        MessageVo data = msg.getData();
+        log.info("data: {}", data);
     }
 
 }

@@ -2,7 +2,21 @@ spring:
   application:
     name: heytea-demo-rabbitmq-consumer
   rabbitmq:
+    dynamic: false # 禁止创建 AmqpAdmin bean
     addresses: rabbitmq:30007
     username: dev-sso
     password: dev-sso-password
     virtual-host: dev-sso-vhost
+    listener:
+      simple:
+        default-requeue-rejected: false
+        retry:
+          # 允许消息消费失败的重试
+          enabled: true
+          # 消息多次消费的间隔 1 秒
+          initial-interval: 1000
+          # 消息最多消费次数 3 次
+          max-attempts: 3
+          max-interval: 10000
+          multiplier: 2.0
+          stateless: true
