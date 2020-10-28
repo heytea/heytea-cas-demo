@@ -23,7 +23,7 @@ public class RabbitmqMessagingConsumer {
 
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
-    private static final String queueName = "heytea.sso.oa.queue";
+    public static final String queueName = "heytea.sso.oa.queue";
 
     @SneakyThrows(JsonProcessingException.class)
     @RabbitListener(queues = {queueName})
