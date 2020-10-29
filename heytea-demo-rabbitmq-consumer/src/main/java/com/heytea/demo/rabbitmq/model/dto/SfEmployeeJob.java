@@ -51,6 +51,16 @@ public class SfEmployeeJob {
 	private String customString8;
 
 	/**
+	 * 九级部门
+	 */
+	private String customString2;
+
+	/**
+	 * 十级部门
+	 */
+	private String customString12;
+
+	/**
 	 * sf部门id
 	 */
 	private String customString4;
