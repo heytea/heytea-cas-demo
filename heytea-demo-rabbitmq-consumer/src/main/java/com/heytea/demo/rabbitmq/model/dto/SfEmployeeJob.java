@@ -135,10 +135,6 @@ public class SfEmployeeJob {
 	 */
 	private String personalEmail;
 	/**
-	 * 证件号码
-	 */
-	private String nationalId;
-	/**
 	 * 证件类型
 	 */
 	private String cardType;
