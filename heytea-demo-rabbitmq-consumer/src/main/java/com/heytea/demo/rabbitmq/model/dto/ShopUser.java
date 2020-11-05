@@ -50,4 +50,18 @@ public class ShopUser {
 	 */
 	private String managerId;
 
+	/**
+	 * 语言
+	 * 日本：ja-JP
+	 * 简体中文：zh-CN
+	 * 繁体中文：zh-HK
+	 * 英语：en-US
+	 */
+	private String language;
+
+	/**
+	 * 安全等级
+	 */
+	private String securityLevel;
+
 }
