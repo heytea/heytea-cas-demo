@@ -114,6 +114,11 @@ public class SfEmployeeJob {
 	 * 员工姓名
 	 */
 	private String personName;
+
+	/**
+	 * 员工姓名
+	 */
+	private String firstName;
 	/**
 	 * 性别
 	 */
