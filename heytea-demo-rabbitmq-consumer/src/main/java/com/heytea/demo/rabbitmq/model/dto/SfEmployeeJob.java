@@ -116,7 +116,7 @@ public class SfEmployeeJob {
 	private String personName;
 
 	/**
-	 * 员工姓名
+	 * 员工英文姓名
 	 */
 	private String firstName;
 	/**
