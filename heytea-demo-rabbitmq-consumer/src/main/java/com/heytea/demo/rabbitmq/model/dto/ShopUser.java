@@ -60,6 +60,11 @@ public class ShopUser {
 	private String language;
 
 	/**
+	 * 语言（oa系统专用）
+	 */
+	private String customOaLanguage;
+
+	/**
 	 * 安全等级
 	 */
 	private String securityLevel;
