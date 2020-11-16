@@ -143,5 +143,9 @@ public class SfEmployeeJob {
 	 * 证件类型
 	 */
 	private String cardType;
+	/**
+	 * 直接上级
+	 */
+	private String managerId;
 
 }
