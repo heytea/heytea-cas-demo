@@ -148,11 +148,13 @@ public class SfEmployeeJob {
 	 */
 	private String managerId;
 	/**
-	 * 职级编码
+	 * 字段描述：职级编码
+	 * SF对应实体：PicklistOption 字段：externalCode
 	 */
 	private String jobTitleCode;
 	/**
-	 * 职级名称
+	 * 字段描述：职级名称
+	 * SF对应实体：PicklistOption 字段：localeLabel
 	 */
 	private String jobTitleName;
 
