@@ -147,5 +147,15 @@ public class SfEmployeeJob {
 	 * 直接上级
 	 */
 	private String managerId;
+	/**
+	 * 字段描述：职级编码
+	 * SF对应实体：PicklistOption 字段：externalCode
+	 */
+	private String jobTitleCode;
+	/**
+	 * 字段描述：职级名称
+	 * SF对应实体：PicklistOption 字段：localeLabel
+	 */
+	private String jobTitleName;
 
 }
