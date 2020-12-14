@@ -147,5 +147,13 @@ public class SfEmployeeJob {
 	 * 直接上级
 	 */
 	private String managerId;
+	/**
+	 * 职级编码
+	 */
+	private String jobTitleCode;
+	/**
+	 * 职级名称
+	 */
+	private String jobTitleName;
 
 }
