@@ -157,5 +157,10 @@ public class SfEmployeeJob {
 	 * SF对应实体：PicklistOption 字段：localeLabel
 	 */
 	private String jobTitleName;
+	/**
+	 * 字段描述：入职日期
+	 * SF对应实体：EmpEmployment 字段：startDate
+	 */
+	private String hireDate;
 
 }
