@@ -11,6 +11,10 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class ShopUser {
 	/**
+	 * 唯一标示id
+	 */
+	private String id;
+	/**
 	 * 编号
 	 */
 	private String code;
