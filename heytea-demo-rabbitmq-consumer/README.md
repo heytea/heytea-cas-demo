@@ -1,6 +1,9 @@
 ### 准备好 RabbitMQ
 
-准备好 RabbitMQ 队列： heytea.sso.oa.queue
+业务子系统使用的对应 RabbitMQ 队列如下： 
+
+- OA 系统： heytea.sso.oa.queue
+- E-Learning 系统： heytea.sso.elearning.queue
 
 ### 启动服务
 
