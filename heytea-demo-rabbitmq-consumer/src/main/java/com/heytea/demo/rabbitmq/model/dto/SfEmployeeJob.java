@@ -162,5 +162,23 @@ public class SfEmployeeJob {
 	 * SF对应实体：EmpEmployment 字段：startDate
 	 */
 	private String hireDate;
+	
+	/**
+     	 * 员工类型名称
+	 * SF对应实体:  PicklistOption 字段:localeLabel
+    	 */
+    	private String employeeTypeName;
+	
+	/**
+    	 * 合同主体编码
+	 * SF对应实体：PicklistOption 字段：externalCode
+     	 */
+    	private String mainContractCode;
+
+    	/**
+    	 * 合同主体名称
+	 * SF对应实体：PicklistOption 字段：localeLabel
+     	*/
+    	private String mainContractName;
 
 }
