@@ -165,19 +165,19 @@ public class SfEmployeeJob {
 	
 	/**
      	 * 员工类型名称
-	 * SF对应实体:  PicklistOption 字段:localeLabel
+	 * SF对应实体:  PicklistOption (picklist/picklistId eq 'EmploymentType') 字段:localeLabel
     	 */
     	private String employeeTypeName;
 	
 	/**
     	 * 合同主体编码
-	 * SF对应实体：PicklistOption 字段：externalCode
+	 * SF对应实体：PicklistOption (picklist/picklistId eq 'CurrentSignatory')  字段：externalCode
      	 */
     	private String mainContractCode;
 
     	/**
     	 * 合同主体名称
-	 * SF对应实体：PicklistOption 字段：localeLabel
+	 * SF对应实体：PicklistOption (picklist/picklistId eq 'CurrentSignatory') 字段：localeLabel
      	*/
     	private String mainContractName;
 
