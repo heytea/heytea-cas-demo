@@ -22,6 +22,7 @@ public class SfDepartment {
 	 * 字段描述：状态
 	 * SF对应实体：cust_OG,cust_group1,cust_group2,cust_group3,cust_group4 字段：mdfSystemStatus
 	 * SF对应实体：FOCompany,FOBusinessUnit,FODivision,FODepartment 字段：status
+	 * (A:活动  I:非活动)
 	 */
 	private String status;
 	/**
