@@ -101,7 +101,8 @@ public class SfEmployeeJob {
 	private String customString22;
 
 	/**
-	 * 状态
+	 * 就职状态 
+	 * (574:在职  575:非活动  576:休假  583:调离  577:已解雇  578:带薪休假  579:已退休  580:已暂停  581:离职  582:无薪休假)
 	 */
 	private String emplStatus;
 
@@ -120,11 +121,15 @@ public class SfEmployeeJob {
 	 */
 	private String firstName;
 	/**
-	 * 性别
+	 * 性别  (F:女  M:男)
 	 */
 	private String sex;
 	/**
-	 * 生日
+	 * 生日 
+	 * /Date(${timestamp})/  
+	 * timestamp的值为Unix毫秒级时间戳  timestamp值可能为负数
+	 * 例:
+	 *  /Date(784771200000)/  ----->  1994-11-14 00:00:00 (UTC时区)
 	 */
 	private String birthday;
 	/**
