@@ -1,0 +1,30 @@
+package com.heytea.demo.rabbitmq.model.dto;
+
+import lombok.Data;
+import lombok.experimental.Accessors;
+
+@Data
+@Accessors(chain = true)
+public class SfJobLevel {
+
+    /**
+     * sfid
+     */
+    private String pickListOptionId;
+
+    /**
+     * 编号
+     */
+    private String externalCode;
+
+    /**
+     * 职级名称
+     */
+    private String localeLabel;
+
+    /**
+     * 状态 (ACTIVE 活动  Inactive:非活动)
+     */
+    private String status;
+
+}
