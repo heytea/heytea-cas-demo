@@ -27,6 +27,7 @@ public class SfJobLevel {
 
     /**
      * 状态 (ACTIVE 生效)
+     * SF对应实体：PicklistOption (picklist/picklistId eq 'joblevel')  字段: status
      */
     private String status;
 
