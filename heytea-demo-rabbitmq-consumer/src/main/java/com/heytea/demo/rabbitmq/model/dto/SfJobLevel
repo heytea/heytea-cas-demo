@@ -9,21 +9,24 @@ public class SfJobLevel {
 
     /**
      * sfid
+     * SF对应实体：PicklistOption (picklist/picklistId eq 'joblevel')  字段: picklist/picklistId
      */
     private String pickListOptionId;
 
     /**
      * 编号
+     * SF对应实体：PicklistOption (picklist/picklistId eq 'joblevel')  字段: externalCode
      */
     private String externalCode;
 
     /**
      * 职级名称
+     * SF对应实体：PicklistOption (picklist/picklistId eq 'joblevel')  字段: localeLabel
      */
     private String localeLabel;
 
     /**
-     * 状态 (ACTIVE 活动  Inactive:非活动)
+     * 状态 (ACTIVE 生效)
      */
     private String status;
 
