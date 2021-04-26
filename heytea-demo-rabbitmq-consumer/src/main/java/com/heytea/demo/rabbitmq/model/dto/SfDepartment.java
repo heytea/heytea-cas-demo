@@ -48,40 +48,43 @@ public class SfDepartment {
 
 	/**
 	 * 区域员工关系
-	 * SF对应实体：FOCompany 字段：cust_StaffRelations
+	 *
+	 * SF对应实体：FOCompany      字段：cust_StaffRelations
 	 * SF对应实体：FOBusinessUnit 字段：cust_StaffRelations
-	 * SF对应实体：FODivision 字段：cust_StaffRelations
-	 * SF对应实体：FODepartment 字段：cust_StaffRelations
-	 * SF对应实体：cust_group1 字段：cust_StaffRelations
-	 * SF对应实体：cust_group2 字段：cust_StaffRelations
-	 * SF对应实体：cust_group3 字段：cust_StaffRelations
-	 * SF对应实体：cust_group4 字段：cust_StaffRelations
+	 * SF对应实体：FODivision     字段：cust_StaffRelations
+	 * SF对应实体：FODepartment   字段：cust_StaffRelations
+	 * SF对应实体：cust_group1    字段：cust_StaffRelations
+	 * SF对应实体：cust_group2    字段：cust_StaffRelations
+	 * SF对应实体：cust_group3    字段：cust_StaffRelations
+	 * SF对应实体：cust_group4    字段：cust_StaffRelations
 	 */
 	private String custStaffRelations;
 
 	/**
 	 * 是否门店
-	 * SF对应实体：FOCompany 字段：cust_ifStore
+	 *
+	 * SF对应实体：FOCompany      字段：cust_ifStore
 	 * SF对应实体：FOBusinessUnit 字段：cust_ifStore
-	 * SF对应实体：FODivision 字段：cust_ifStore
-	 * SF对应实体：FODepartment 字段：cust_ifStore
-	 * SF对应实体：cust_group1 字段：cust_ifStore
-	 * SF对应实体：cust_group2 字段：cust_ifStore
-	 * SF对应实体：cust_group3 字段：cust_ifStore
-	 * SF对应实体：cust_group4 字段：cust_ifStore
+	 * SF对应实体：FODivision     字段：cust_ifStore
+	 * SF对应实体：FODepartment   字段：cust_ifStore
+	 * SF对应实体：cust_group1    字段：cust_ifStore
+	 * SF对应实体：cust_group2    字段：cust_ifStore
+	 * SF对应实体：cust_group3    字段：cust_ifStore
+	 * SF对应实体：cust_group4    字段：cust_ifStore
 	 */
 	private String custIfStore;
 
 	/**
 	 * HRBP
-	 *  SF对应实体：FOCompany 字段：cust_HRBP
-	 * 	 * SF对应实体：FOBusinessUnit 字段：cust_HRBP
-	 * 	 * SF对应实体：FODivision 字段：cust_HRBP
-	 * 	 * SF对应实体：FODepartment 字段：cust_HRBP
-	 * 	 * SF对应实体：cust_group1 字段：cust_HRBP
-	 * 	 * SF对应实体：cust_group2 字段：cust_HRBP
-	 * 	 * SF对应实体：cust_group3 字段：cust_HRBP
-	 * 	 * SF对应实体：cust_group4 字段：cust_HRBP
+	 *
+	 * SF对应实体：FOCompany      字段：cust_HRBP
+	 * SF对应实体：FOBusinessUnit 字段：cust_HRBP
+	 * SF对应实体：FODivision     字段：cust_HRBP
+	 * SF对应实体：FODepartment   字段：cust_HRBP
+	 * SF对应实体：cust_group1    字段：cust_HRBP
+	 * SF对应实体：cust_group2    字段：cust_HRBP
+	 * SF对应实体：cust_group3    字段：cust_HRBP
+	 * SF对应实体：cust_group4    字段：cust_HRBP
 	 */
 	private String custHrbp;
 }
