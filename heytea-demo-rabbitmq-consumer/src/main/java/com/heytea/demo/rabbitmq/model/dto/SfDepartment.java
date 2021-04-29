@@ -87,4 +87,17 @@ public class SfDepartment {
 	 * SF对应实体：cust_group4    字段：cust_HRBP
 	 */
 	private String custHrbp;
+	
+	 /**
+    	 * 门店编码
+	 * SF对应实体：FOCompany      字段：cust_FinancialBusinessCode
+	 * SF对应实体：FOBusinessUnit 字段：cust_FinancialBusinessCode
+	 * SF对应实体：FODivision     字段：cust_FinancialBusinessCode
+	 * SF对应实体：FODepartment   字段：cust_FinancialBusinessCode
+	 * SF对应实体：cust_group1    字段：cust_FinancialBusinessCode
+	 * SF对应实体：cust_group2    字段：cust_FinancialBusinessCode
+	 * SF对应实体：cust_group3    字段：cust_FinancialBusinessCode
+	 * SF对应实体：cust_group4    字段：cust_FinancialBusinessCode
+         */
+        private String storeCode;
 }
