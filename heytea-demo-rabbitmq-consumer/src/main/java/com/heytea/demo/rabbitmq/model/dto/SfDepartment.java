@@ -99,5 +99,5 @@ public class SfDepartment {
 	 * SF对应实体：cust_group3    字段：cust_FinancialBusinessCode
 	 * SF对应实体：cust_group4    字段：cust_FinancialBusinessCode
          */
-        private String storeCode;
+        private String custFinancialBusinessCode;
 }
